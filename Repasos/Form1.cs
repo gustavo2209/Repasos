@@ -280,5 +280,49 @@ namespace Repasos
             }
             textBox4.Text = msg;
         }
+
+        private void listBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Get the currently selected item in the ListBox.
+            
+            int curItem5 = listBox3.SelectedIndex;
+            //MessageBox.Show("" + curItem5);
+
+            // Find the string in ListBox2.
+            //listBox2.SetSelected(curItem5, true);
+            //curItem5 = -1;
+            // If the item was not found in ListBox 2 display a message box, otherwise select it in ListBox2.
+            //if (index == -1)
+            //{
+            //MessageBox.Show("Item is not available in ListBox2");
+            //}
+
+            //else
+            //{
+            //listBox3.SetSelected(index, true);
+            //}
+        }
+
+        private void listBox2_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            
+            // Get the currently selected item in the ListBox.
+            int curItem = listBox2.SelectedIndex;
+            //MessageBox.Show("" + curItem);
+
+            // Find the string in ListBox2.
+            listBox3.SetSelected(curItem, true);
+            //curItem = -1;
+            // If the item was not found in ListBox 2 display a message box, otherwise select it in ListBox2.
+            //if (index == -1)
+            //{
+            //MessageBox.Show("Item is not available in ListBox2");
+            //}
+
+            //else
+            //{
+            //listBox3.SetSelected(index, true);
+            //}
+        }
     }
 }
