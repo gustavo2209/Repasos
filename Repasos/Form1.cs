@@ -57,6 +57,13 @@ namespace Repasos
             comboBox1.SelectedIndex = 14;
             comboBox2.SelectedItem = "14";
             comboBox3.SelectedIndex = 14;
+
+            for (int x = 1; x <= 5; x++)
+            {
+                listBox2.Items.Add("Item " + x.ToString());
+                listBox3.Items.Add("Item " + x.ToString());
+                listBox4.Items.Add("Item " + x.ToString());
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -281,48 +288,90 @@ namespace Repasos
             textBox4.Text = msg;
         }
 
-        private void listBox3_SelectedIndexChanged(object sender, EventArgs e)
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Get the currently selected item in the ListBox.
+            //MessageBox.Show( listBox2.SelectedItem.ToString());
+
             
-            int curItem5 = listBox3.SelectedIndex;
-            //MessageBox.Show("" + curItem5);
 
-            // Find the string in ListBox2.
-            //listBox2.SetSelected(curItem5, true);
-            //curItem5 = -1;
-            // If the item was not found in ListBox 2 display a message box, otherwise select it in ListBox2.
-            //if (index == -1)
+            //if (!listBox3.GetSelected(0))
             //{
-            //MessageBox.Show("Item is not available in ListBox2");
-            //}
+            //listBox3.SetSelected(listBox2.SelectedIndex, true);
+            //listBox3.ClearSelected();
+            //listBox4.ClearSelected();
+            //listBox3.ClearSelected();
+            //listBox3.SetSelected(listBox2.SelectedIndex, true);
+            //listBox4.ClearSelected();
+            //listBox4.SetSelected(listBox2.SelectedIndex, true);
 
-            //else
-            //{
-            //listBox3.SetSelected(index, true);
+            //listBox2.ClearSelected();
+            //listBox3.ClearSelected();
+            //listBox4.ClearSelected();
             //}
         }
 
-        private void listBox2_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void listBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //MessageBox.Show("" + listBox3.SelectedIndex);
+            //if (!listBox2.GetSelected(0))
+            //{
+
+            //listBox2.ClearSelected();
+            //listBox2.SetSelected(listBox3.SelectedIndex, true);
+            //listBox4.ClearSelected();
+
+            //listBox2.SetSelected(listBox3.SelectedIndex, true);
+            //listBox4.SetSelected(listBox3.SelectedIndex, true);
+
+
+            /*listBox2.SetSelected(listBox3.SelectedIndex, true);
+            listBox4.SetSelected(listBox3.SelectedIndex, true);listBox2.ClearSelected();
+            listBox3.ClearSelected();
+            listBox4.ClearSelected();*/
+            //}
+
+        }
+
+        private void listBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
             
-            // Get the currently selected item in the ListBox.
-            int curItem = listBox2.SelectedIndex;
-            //MessageBox.Show("" + curItem);
 
-            // Find the string in ListBox2.
-            listBox3.SetSelected(curItem, true);
-            //curItem = -1;
-            // If the item was not found in ListBox 2 display a message box, otherwise select it in ListBox2.
-            //if (index == -1)
-            //{
-            //MessageBox.Show("Item is not available in ListBox2");
-            //}
+            /*listBox3.SetSelected(listBox4.SelectedIndex, true);
+            listBox2.SetSelected(listBox4.SelectedIndex, true);listBox2.ClearSelected();
+            listBox3.ClearSelected();
+            listBox4.ClearSelected();*/
+            
+        }
 
-            //else
-            //{
-            //listBox3.SetSelected(index, true);
-            //}
+        private void listBox2_Click(object sender, EventArgs e)
+        {
+            if (listBox2.SelectedIndex != -1)
+            {
+                listBox3.SetSelected(listBox2.SelectedIndex, true);
+
+                listBox4.SetSelected(listBox2.SelectedIndex, true);
+            }
+            
+        }
+
+        private void listBox3_Click(object sender, EventArgs e)
+        {
+            if (listBox3.SelectedIndex != -1)
+            {
+                listBox2.SetSelected(listBox3.SelectedIndex, true);
+                listBox4.SetSelected(listBox3.SelectedIndex, true);
+            }
+                
+        }
+
+        private void listBox4_Click(object sender, EventArgs e)
+        {
+            if (listBox4.SelectedIndex != -1)
+            {
+                listBox2.SetSelected(listBox4.SelectedIndex, true);
+                listBox3.SetSelected(listBox4.SelectedIndex, true);
+            }
+                
         }
     }
 }
